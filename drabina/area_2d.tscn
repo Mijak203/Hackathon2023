@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://grc6xf8u2u7n"]
+
+[ext_resource type="Script" path="res://drabina/drabina.gd" id="1_juy3h"]
+[ext_resource type="Texture2D" uid="uid://w2a5f3nvu1n" path="res://icon.svg" id="2_54hq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h52h8"]
+size = Vector2(24, 346)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_juy3h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 21)
+scale = Vector2(0.203125, 2.70312)
+texture = ExtResource("2_54hq7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 21)
+shape = SubResource("RectangleShape2D_h52h8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
