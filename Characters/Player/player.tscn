@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch4eqipx6kb7i"]
+
+[ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_2g5sw"]
+[ext_resource type="Texture2D" uid="uid://40xxsh6bpnpx" path="res://assets/player/Adventurer Sprite Sheet v1.5 (1).png" id="1_4uh3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jevde"]
+size = Vector2(16, 20)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_2g5sw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 4)
+shape = SubResource("RectangleShape2D_jevde")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4uh3m")
+hframes = 13
+vframes = 14
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
